@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://btror1u2mvwtj"]
+
+[ext_resource type="Texture2D" uid="uid://cr4ekw3n27wm1" path="res://assets/Texture/plataformas.png" id="1_7d5wg"]
+[ext_resource type="Script" path="res://Scripts/plataforma_mexedora_deladinho.gd" id="1_8kuij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h38mn"]
+size = Vector2(44, 13)
+
+[node name="plataforma_mexedora_deladinho" type="Node2D"]
+position = Vector2(8, 42)
+script = ExtResource("1_8kuij")
+
+[node name="plataforma" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="Deslizaliza_text" type="Sprite2D" parent="plataforma"]
+position = Vector2(24, -24)
+texture = ExtResource("1_7d5wg")
+region_enabled = true
+region_rect = Rect2(16, 32, 48, 48)
+
+[node name="Colission_plat" type="CollisionShape2D" parent="plataforma"]
+position = Vector2(22, -15.5)
+shape = SubResource("RectangleShape2D_h38mn")
+one_way_collision = true
